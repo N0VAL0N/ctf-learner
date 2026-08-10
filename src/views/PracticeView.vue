@@ -317,10 +317,6 @@ const resetAll = () => {
   localStorage.removeItem('practice_state')
 }
 
-const retrySkipped = () => {
-  generateTasks()
-}
-
 const saveState = () => {
   const state = {
     tasks: tasks.value,
@@ -488,9 +484,6 @@ h1 {
 .count-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-.count-input[type="number"] {
-  -moz-appearance: textfield;
 }
 
 /* ===== КНОПКА ГЕНЕРАЦИИ ===== */
