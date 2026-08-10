@@ -1,0 +1,979 @@
+{
+  "topics": [
+    {
+      "id": "python_intro",
+      "title": "Введение в Python",
+      "description": "Установка, запуск, IDE, первая программа",
+      "category": "python",
+      "difficulty": 1,
+      "theory": [
+        {
+          "title": "Что такое Python",
+          "content": "Python — интерпретируемый язык с динамической типизацией. Популярен в веб-разработке, науке о данных, автоматизации.",
+          "code": null
+        },
+        {
+          "title": "Установка и запуск",
+          "content": "Скачай Python с python.org. Для запуска используй терминал (python3 file.py) или IDE (VS Code, PyCharm).",
+          "code": "# В терминале\npython3 --version\npython3 my_script.py"
+        },
+        {
+          "title": "Первая программа",
+          "content": "print() — функция для вывода данных на экран. Комментарии начинаются с #.",
+          "code": "print('Hello, world!')\n# Это комментарий"
+        }
+      ]
+    },
+    {
+      "id": "python_variables",
+      "title": "Переменные и типы данных",
+      "description": "int, float, str, bool, None",
+      "category": "python",
+      "difficulty": 1,
+      "theory": [
+        {
+          "title": "Объявление переменных",
+          "content": "Переменные создаются при первом присваивании. Тип определяется автоматически.",
+          "code": "x = 10\ny = 3.14\nname = 'Alice'\nis_valid = True\nnothing = None"
+        },
+        {
+          "title": "Основные типы данных",
+          "content": "int — целые числа, float — вещественные, str — строки, bool — True/False, None — отсутствие значения.",
+          "code": "# Целые\nage = 25\n# Вещественные\nprice = 19.99\n# Строки\ngreeting = 'Hello'\n# Булевы\nis_active = True\n# None\ndata = None"
+        },
+        {
+          "title": "Преобразование типов",
+          "content": "Явное преобразование с помощью int(), float(), str(), bool().",
+          "code": "x = '10'\ny = int(x)\nprint(y + 5)\n\nz = 3.14\ns = str(z)\nprint('Pi = ' + s)"
+        },
+        {
+          "title": "Проверка типа",
+          "content": "type() — возвращает тип переменной. isinstance() — проверяет, принадлежит ли переменная типу.",
+          "code": "x = 10\nprint(type(x))  # <class 'int'>\nprint(isinstance(x, int))  # True"
+        }
+      ]
+    },
+    {
+      "id": "python_io",
+      "title": "Ввод и вывод",
+      "description": "print(), input(), f-string, format()",
+      "category": "python",
+      "difficulty": 1,
+      "theory": [
+        {
+          "title": "Функция print()",
+          "content": "Вывод данных на экран. Аргументы: sep (разделитель), end (окончание).",
+          "code": "print('Hello, world!')\nprint(42)\nprint(3.14)\nprint('a', 'b', 'c', sep='-', end='!')"
+        },
+        {
+          "title": "Функция input()",
+          "content": "Чтение данных от пользователя. Всегда возвращает строку.",
+          "code": "name = input('Как тебя зовут? ')\nprint(f'Привет, {name}!')"
+        },
+        {
+          "title": "Форматирование строк f-string",
+          "content": "Вставка переменных в строку с помощью f'...'.",
+          "code": "name = 'Alice'\nage = 30\nprint(f'Имя: {name}, Возраст: {age}')"
+        },
+        {
+          "title": "Метод format()",
+          "content": "Старый способ форматирования с {}.",
+          "code": "name = 'Bob'\nage = 25\nprint('Имя: {}, Возраст: {}'.format(name, age))"
+        }
+      ]
+    },
+    {
+      "id": "python_if",
+      "title": "Условный оператор if",
+      "description": "if, elif, else, логические операторы",
+      "category": "python",
+      "difficulty": 1,
+      "theory": [
+        {
+          "title": "Конструкция if-else",
+          "content": "Ветвление логики: если условие истинно — выполняется один блок, иначе — другой.",
+          "code": "x = 10\nif x > 0:\n    print('Положительное')\nelse:\n    print('Не положительное')"
+        },
+        {
+          "title": "Конструкция if-elif-else",
+          "content": "Несколько условий с помощью elif.",
+          "code": "x = 0\nif x > 0:\n    print('Положительное')\nelif x == 0:\n    print('Ноль')\nelse:\n    print('Отрицательное')"
+        },
+        {
+          "title": "Логические операторы",
+          "content": "and, or, not — для сложных условий.",
+          "code": "a = True\nb = False\nif a and not b:\n    print('Условие выполнено')\n\nif a or b:\n    print('Хотя бы одно истинно')"
+        },
+        {
+          "title": "Вложенные условия",
+          "content": "Условия внутри условий.",
+          "code": "x = 10\ny = 20\nif x > 0:\n    if y > 10:\n        print('x > 0 и y > 10')"
+        },
+        {
+          "title": "Тернарный оператор",
+          "content": "Краткая запись условия в одну строку.",
+          "code": "age = 18\nstatus = 'Взрослый' if age >= 18 else 'Ребенок'\nprint(status)"
+        }
+      ]
+    },
+    {
+      "id": "python_loops",
+      "title": "Циклы for и while",
+      "description": "for, while, break, continue, range",
+      "category": "python",
+      "difficulty": 2,
+      "theory": [
+        {
+          "title": "Цикл for",
+          "content": "Итерация по последовательности (список, строка, range).",
+          "code": "for i in range(5):\n    print(i)\n\narr = ['a', 'b', 'c']\nfor item in arr:\n    print(item)"
+        },
+        {
+          "title": "Цикл while",
+          "content": "Выполняется, пока условие истинно.",
+          "code": "i = 0\nwhile i < 5:\n    print(i)\n    i += 1"
+        },
+        {
+          "title": "break и continue",
+          "content": "break — прерывает цикл, continue — переходит к следующей итерации.",
+          "code": "for i in range(10):\n    if i == 5:\n        break\n    print(i)\n# Выведет 0-4\n\nfor i in range(5):\n    if i == 2:\n        continue\n    print(i)\n# Выведет 0, 1, 3, 4"
+        },
+        {
+          "title": "Цикл for с enumerate",
+          "content": "Получение индекса и значения элемента.",
+          "code": "arr = ['a', 'b', 'c']\nfor idx, val in enumerate(arr):\n    print(f'{idx}: {val}')"
+        },
+        {
+          "title": "Цикл for с zip",
+          "content": "Итерация по нескольким последовательностям одновременно.",
+          "code": "names = ['Alice', 'Bob']\nages = [25, 30]\nfor name, age in zip(names, ages):\n    print(f'{name} — {age} лет')"
+        }
+      ]
+    },
+    {
+      "id": "python_lists",
+      "title": "Списки",
+      "description": "Создание, индексация, методы, срезы",
+      "category": "python",
+      "difficulty": 2,
+      "theory": [
+        {
+          "title": "Создание списков",
+          "content": "Списки — изменяемые последовательности. Создаются через [] или list().",
+          "code": "arr = [1, 2, 3, 4]\nempty = []\nfrom_string = list('abc')\nprint(from_string)  # ['a', 'b', 'c']"
+        },
+        {
+          "title": "Индексация и срезы",
+          "content": "Доступ по индексу (с 0). Отрицательные индексы — с конца. Срезы [start:stop:step].",
+          "code": "arr = [0, 1, 2, 3, 4, 5]\nprint(arr[0])    # 0\nprint(arr[-1])   # 5\nprint(arr[1:4])  # [1, 2, 3]\nprint(arr[::2])  # [0, 2, 4]\nprint(arr[::-1]) # [5, 4, 3, 2, 1, 0]"
+        },
+        {
+          "title": "Методы списков: append, insert, pop, remove",
+          "content": "Добавление, вставка, удаление элементов.",
+          "code": "arr = [1, 2, 3]\narr.append(4)         # [1, 2, 3, 4]\narr.insert(1, 99)     # [1, 99, 2, 3, 4]\narr.pop()             # удалит 4\narr.remove(2)         # удалит 2\nprint(arr)            # [1, 99, 3]"
+        },
+        {
+          "title": "Методы списков: sort, reverse, index, count",
+          "content": "Сортировка, разворот, поиск, подсчёт.",
+          "code": "arr = [3, 1, 4, 2]\narr.sort()\nprint(arr)  # [1, 2, 3, 4]\narr.reverse()\nprint(arr)  # [4, 3, 2, 1]\nprint(arr.index(3))  # 1\nprint(arr.count(2))  # 1"
+        },
+        {
+          "title": "Генераторы списков",
+          "content": "Краткий синтаксис для создания списков.",
+          "code": "squares = [x**2 for x in range(10)]\nevens = [x for x in range(20) if x % 2 == 0]\nprint(squares)\nprint(evens)"
+        }
+      ]
+    },
+    {
+      "id": "python_tuples_sets",
+      "title": "Кортежи и множества",
+      "description": "tuple, set, frozenset",
+      "category": "python",
+      "difficulty": 2,
+      "theory": [
+        {
+          "title": "Кортежи tuple",
+          "content": "Неизменяемые последовательности. Создаются через () или tuple().",
+          "code": "t = (1, 2, 3)\nprint(t[0])  # 1\n# t[0] = 10  # ошибка — кортеж неизменяем\n\nsingle = (5,)  # кортеж из одного элемента"
+        },
+        {
+          "title": "Множества set",
+          "content": "Хранят уникальные элементы. Создаются через {} или set().",
+          "code": "s = {1, 2, 3, 3, 4}\nprint(s)  # {1, 2, 3, 4}\ns.add(5)\ns.remove(2)\nprint(s)  # {1, 3, 4, 5}"
+        },
+        {
+          "title": "Операции над множествами",
+          "content": "union (|), intersection (&), difference (-), symmetric_difference (^).",
+          "code": "a = {1, 2, 3}\nb = {3, 4, 5}\nprint(a | b)  # {1, 2, 3, 4, 5}\nprint(a & b)  # {3}\nprint(a - b)  # {1, 2}\nprint(a ^ b)  # {1, 2, 4, 5}"
+        },
+        {
+          "title": "frozenset",
+          "content": "Неизменяемая версия множества.",
+          "code": "fs = frozenset([1, 2, 3])\n# fs.add(4)  # ошибка"
+        }
+      ]
+    },
+    {
+      "id": "python_dicts",
+      "title": "Словари",
+      "description": "dict, методы, итерация",
+      "category": "python",
+      "difficulty": 2,
+      "theory": [
+        {
+          "title": "Создание словарей",
+          "content": "Хранят пары ключ-значение. Ключи — неизменяемые типы.",
+          "code": "d = {'name': 'Alice', 'age': 30}\nprint(d['name'])  # Alice\nprint(d.get('age', 0))  # 30"
+        },
+        {
+          "title": "Методы словарей: keys, values, items",
+          "content": "Получение ключей, значений, пар.",
+          "code": "d = {'a': 1, 'b': 2}\nfor k, v in d.items():\n    print(k, v)\nprint(d.keys())   # dict_keys(['a', 'b'])\nprint(d.values()) # dict_values([1, 2])"
+        },
+        {
+          "title": "Методы словарей: update, pop, get",
+          "content": "Обновление, удаление, безопасное получение.",
+          "code": "d = {'a': 1}\nd.update({'b': 2})\nval = d.pop('a')  # 1\nprint(d)  # {'b': 2}\nprint(d.get('c', 0))  # 0"
+        },
+        {
+          "title": "Генераторы словарей",
+          "content": "Краткий синтаксис для создания словарей.",
+          "code": "squares = {x: x**2 for x in range(5)}\nprint(squares)  # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}"
+        },
+        {
+          "title": "Вложенные словари",
+          "content": "Словари внутри словарей.",
+          "code": "users = {\n    'alice': {'age': 25, 'city': 'NYC'},\n    'bob': {'age': 30, 'city': 'LA'}\n}\nprint(users['alice']['city'])  # NYC"
+        }
+      ]
+    },
+    {
+      "id": "python_strings",
+      "title": "Строки",
+      "description": "Методы, срезы, форматирование, кодировки",
+      "category": "python",
+      "difficulty": 2,
+      "theory": [
+        {
+          "title": "Создание строк",
+          "content": "Строки в одинарных, двойных или тройных кавычках.",
+          "code": "s = 'Hello'\ns2 = \"World\"\ns3 = '''Многострочная\\nстрока'''"
+        },
+        {
+          "title": "Методы строк: upper, lower, strip, split, join",
+          "content": "Изменение регистра, удаление пробелов, разбиение, объединение.",
+          "code": "s = '  hello world  '\nprint(s.strip())       # 'hello world'\nprint(s.upper())       # '  HELLO WORLD  '\nprint(s.split())       # ['hello', 'world']\nprint('-'.join(['a','b']))  # 'a-b'"
+        },
+        {
+          "title": "Методы строк: replace, find, count, startswith",
+          "content": "Замена, поиск, подсчёт, проверка начала.",
+          "code": "s = 'hello world'\nprint(s.replace('l', 'L'))  # 'heLLo worLd'\nprint(s.find('o'))          # 4\nprint(s.count('l'))          # 3\nprint(s.startswith('he'))    # True"
+        },
+        {
+          "title": "Срезы строк",
+          "content": "Получение подстрок по индексам.",
+          "code": "s = 'abcdef'\nprint(s[1:4])  # 'bcd'\nprint(s[::-1]) # 'fedcba'\nprint(s[::2])  # 'ace'"
+        },
+        {
+          "title": "Кодировки: encode, decode",
+          "content": "Преобразование строк в байты и обратно.",
+          "code": "s = 'Привет'\nb = s.encode('utf-8')\nprint(b)  # b'\\xd0\\x9f\\xd1\\x80\\xd0\\xb8\\xd0\\xb2\\xd0\\xb5\\xd1\\x82'\nprint(b.decode('utf-8'))  # 'Привет'"
+        },
+        {
+          "title": "Регулярные выражения (re)",
+          "content": "Поиск по шаблону.",
+          "code": "import re\ns = 'abc123def456'\nnumbers = re.findall(r'\\d+', s)\nprint(numbers)  # ['123', '456']"
+        }
+      ]
+    },
+    {
+      "id": "python_files",
+      "title": "Работа с файлами",
+      "description": "open, read, write, with, CSV, JSON",
+      "category": "python",
+      "difficulty": 2,
+      "theory": [
+        {
+          "title": "Чтение файла",
+          "content": "Открытие и чтение файла. Режимы: 'r' (чтение), 'w' (запись), 'a' (добавление).",
+          "code": "with open('file.txt', 'r') as f:\n    data = f.read()\n    print(data)\n\n# Чтение построчно\nwith open('file.txt', 'r') as f:\n    for line in f:\n        print(line.strip())"
+        },
+        {
+          "title": "Запись в файл",
+          "content": "Запись данных в файл. 'w' — перезаписывает, 'a' — добавляет.",
+          "code": "with open('file.txt', 'w') as f:\n    f.write('Hello, file!')\n\nwith open('file.txt', 'a') as f:\n    f.write('\\nNew line')"
+        },
+        {
+          "title": "Работа с JSON",
+          "content": "Сериализация и десериализация JSON.",
+          "code": "import json\ndata = {'name': 'Alice', 'age': 30}\njson_str = json.dumps(data)\nprint(json_str)\n\nwith open('data.json', 'w') as f:\n    json.dump(data, f)\n\nwith open('data.json', 'r') as f:\n    parsed = json.load(f)\n    print(parsed['name'])"
+        },
+        {
+          "title": "Работа с CSV",
+          "content": "Чтение и запись CSV-файлов.",
+          "code": "import csv\n# Чтение\nwith open('data.csv', 'r') as f:\n    reader = csv.reader(f)\n    for row in reader:\n        print(row)\n\n# Запись\nwith open('data.csv', 'w') as f:\n    writer = csv.writer(f)\n    writer.writerow(['Name', 'Age'])\n    writer.writerow(['Alice', 25])"
+        }
+      ]
+    },
+    {
+      "id": "python_functions",
+      "title": "Функции",
+      "description": "def, return, аргументы, *args, **kwargs",
+      "category": "python",
+      "difficulty": 2,
+      "theory": [
+        {
+          "title": "Определение функций",
+          "content": "Функции — блоки кода с именем. Используются для переиспользования.",
+          "code": "def add(a, b):\n    return a + b\n\nresult = add(3, 5)\nprint(result)  # 8"
+        },
+        {
+          "title": "Аргументы по умолчанию",
+          "content": "Значения по умолчанию для аргументов.",
+          "code": "def greet(name='Гость'):\n    print(f'Привет, {name}!')\ngreet()          # Привет, Гость!\ngreet('Алекс')   # Привет, Алекс!"
+        },
+        {
+          "title": "*args и **kwargs",
+          "content": "Переменное количество позиционных и именованных аргументов.",
+          "code": "def print_all(*args, **kwargs):\n    print('args:', args)\n    print('kwargs:', kwargs)\n\nprint_all(1, 2, 3, name='Alice', age=30)\n# args: (1, 2, 3)\n# kwargs: {'name': 'Alice', 'age': 30}"
+        },
+        {
+          "title": "Lambda-функции",
+          "content": "Анонимные функции в одну строку.",
+          "code": "square = lambda x: x ** 2\nprint(square(5))  # 25\n\narr = [1, 2, 3, 4]\nfiltered = list(filter(lambda x: x > 2, arr))\nprint(filtered)  # [3, 4]"
+        },
+        {
+          "title": "Области видимости",
+          "content": "local (внутри функции), global (глобальная), nonlocal (внешняя).",
+          "code": "x = 10  # global\ndef func():\n    y = 20  # local\n    global x\n    x = 30\n    print(x, y)\nfunc()\nprint(x)  # 30"
+        }
+      ]
+    },
+    {
+      "id": "python_exceptions",
+      "title": "Обработка исключений",
+      "description": "try, except, else, finally, raise",
+      "category": "python",
+      "difficulty": 2,
+      "theory": [
+        {
+          "title": "Конструкция try-except",
+          "content": "Перехват ошибок.",
+          "code": "try:\n    x = int(input('Введите число: '))\n    print(10 / x)\nexcept ValueError:\n    print('Ошибка: не число')\nexcept ZeroDivisionError:\n    print('Ошибка: деление на ноль')"
+        },
+        {
+          "title": "else и finally",
+          "content": "else — выполняется, если ошибок не было. finally — выполняется всегда.",
+          "code": "try:\n    x = 10 / 2\nexcept ZeroDivisionError:\n    print('Ошибка')\nelse:\n    print('Успешно')\nfinally:\n    print('Завершено')"
+        },
+        {
+          "title": "Создание своих исключений",
+          "content": "raise — выброс исключения. Можно создавать свои классы исключений.",
+          "code": "class NegativeAgeError(Exception):\n    pass\n\ndef check_age(age):\n    if age < 0:\n        raise NegativeAgeError('Возраст не может быть отрицательным')\n    return age\n\ntry:\n    check_age(-5)\nexcept NegativeAgeError as e:\n    print(e)"
+        }
+      ]
+    },
+    {
+      "id": "python_modules",
+      "title": "Модули и импорты",
+      "description": "import, from, as, pip",
+      "category": "python",
+      "difficulty": 2,
+      "theory": [
+        {
+          "title": "Импорт модулей",
+          "content": "Подключение стандартных и сторонних модулей.",
+          "code": "import math\nprint(math.sqrt(16))\n\nfrom datetime import datetime\nprint(datetime.now())\n\nimport os as system_os\nprint(system_os.getcwd())"
+        },
+        {
+          "title": "Установка пакетов через pip",
+          "content": "pip — менеджер пакетов Python.",
+          "code": "# В терминале\npip install requests\npip install numpy\n\n# В коде\nimport requests\nresponse = requests.get('https://httpbin.org/get')\nprint(response.json())"
+        },
+        {
+          "title": "Создание своего модуля",
+          "content": "Любой .py файл может быть модулем. Папка с __init__.py — пакет.",
+          "code": "# В файле mymodule.py\ndef hello():\n    print('Hello')\n\n# В основном файле\nimport mymodule\nmymodule.hello()"
+        }
+      ]
+    },
+    {
+      "id": "python_comprehensions",
+      "title": "Генераторы списков и словарей",
+      "description": "list comprehension, dict comprehension, set comprehension",
+      "category": "python",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Генераторы списков",
+          "content": "Создание списка в одну строку с условиями.",
+          "code": "squares = [x**2 for x in range(10)]\nevens = [x for x in range(20) if x % 2 == 0]\nprint(squares)\nprint(evens)"
+        },
+        {
+          "title": "Генераторы словарей",
+          "content": "Создание словаря в одну строку.",
+          "code": "squares_dict = {x: x**2 for x in range(5)}\nprint(squares_dict)"
+        },
+        {
+          "title": "Генераторы множеств",
+          "content": "Создание множества в одну строку.",
+          "code": "unique_squares = {x**2 for x in range(10)}\nprint(unique_squares)"
+        },
+        {
+          "title": "Вложенные генераторы",
+          "content": "Генераторы с несколькими циклами.",
+          "code": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nflattened = [num for row in matrix for num in row]\nprint(flattened)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+        }
+      ]
+    },
+    {
+      "id": "python_recursion",
+      "title": "Рекурсия",
+      "description": "Функции, вызывающие сами себя",
+      "category": "python",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Что такое рекурсия",
+          "content": "Рекурсия — когда функция вызывает саму себя. Важно: базовый случай (условие выхода).",
+          "code": "def countdown(n):\n    if n <= 0:\n        print('Старт!')\n        return\n    print(n)\n    countdown(n-1)\n\ncountdown(5)"
+        },
+        {
+          "title": "Факториал",
+          "content": "Классический пример рекурсии.",
+          "code": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n-1)\n\nprint(factorial(5))  # 120"
+        },
+        {
+          "title": "Числа Фибоначчи",
+          "content": "Рекурсивное вычисление с мемоизацией.",
+          "code": "def fib(n, memo={}):\n    if n <= 1:\n        return n\n    if n not in memo:\n        memo[n] = fib(n-1, memo) + fib(n-2, memo)\n    return memo[n]\n\nprint(fib(10))  # 55"
+        },
+        {
+          "title": "Обход дерева",
+          "content": "Рекурсивный обход бинарного дерева.",
+          "code": "class Node:\n    def __init__(self, val):\n        self.val = val\n        self.left = None\n        self.right = None\n\ndef inorder(root):\n    if root:\n        inorder(root.left)\n        print(root.val)\n        inorder(root.right)"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_sorting",
+      "title": "Сортировка",
+      "description": "Пузырёк, быстрая, встроенная, сортировка с ключом",
+      "category": "algorithms",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Встроенная сортировка sorted",
+          "content": "sorted() — возвращает новый отсортированный список. Не изменяет оригинал.",
+          "code": "arr = [3, 1, 4, 2]\nsorted_arr = sorted(arr)\nprint(sorted_arr)  # [1, 2, 3, 4]\nprint(arr)         # [3, 1, 4, 2]"
+        },
+        {
+          "title": "Метод sort",
+          "content": "sort() — сортирует список на месте. Изменяет оригинал.",
+          "code": "arr = [3, 1, 4, 2]\narr.sort()\nprint(arr)  # [1, 2, 3, 4]"
+        },
+        {
+          "title": "Сортировка с ключом key",
+          "content": "key — функция, возвращающая значение для сортировки.",
+          "code": "arr = [(1, 'a'), (3, 'c'), (2, 'b')]\narr.sort(key=lambda x: x[1])\nprint(arr)  # [(1, 'a'), (2, 'b'), (3, 'c')]"
+        },
+        {
+          "title": "Пузырьковая сортировка",
+          "content": "Классический алгоритм O(n²). Понятен, но медленный для больших данных.",
+          "code": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n    return arr\n\nprint(bubble_sort([3, 1, 4, 2]))  # [1, 2, 3, 4]"
+        },
+        {
+          "title": "Быстрая сортировка (quick sort)",
+          "content": "Рекурсивный алгоритм O(n log n). Один из самых быстрых.",
+          "code": "def quick_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[0]\n    left = [x for x in arr[1:] if x <= pivot]\n    right = [x for x in arr[1:] if x > pivot]\n    return quick_sort(left) + [pivot] + quick_sort(right)\n\nprint(quick_sort([3, 1, 4, 2]))  # [1, 2, 3, 4]"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_search",
+      "title": "Поиск",
+      "description": "Линейный, бинарный, bisect",
+      "category": "algorithms",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Линейный поиск",
+          "content": "Поиск перебором O(n). Простой, но медленный.",
+          "code": "def linear_search(arr, target):\n    for i, val in enumerate(arr):\n        if val == target:\n            return i\n    return -1\n\nprint(linear_search([1, 3, 5, 7], 5))  # 2"
+        },
+        {
+          "title": "Бинарный поиск",
+          "content": "Поиск в отсортированном массиве O(log n). Быстрый, но требует сортировки.",
+          "code": "def binary_search(arr, target):\n    left, right = 0, len(arr)-1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n\narr = [1, 3, 5, 7, 9]\nprint(binary_search(arr, 5))  # 2"
+        },
+        {
+          "title": "Модуль bisect",
+          "content": "Стандартный модуль для бинарного поиска и вставки.",
+          "code": "import bisect\narr = [1, 3, 5, 7, 9]\nidx = bisect.bisect_left(arr, 5)\nprint(idx)  # 2\n\nbisect.insort(arr, 6)\nprint(arr)  # [1, 3, 5, 6, 7, 9]"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_recursion",
+      "title": "Рекурсия (углублённо)",
+      "description": "Рекурсивные алгоритмы, мемоизация, обход деревьев",
+      "category": "algorithms",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Рекурсивные алгоритмы",
+          "content": "Решение задач через разбиение на подзадачи. Важно: базовый случай.",
+          "code": "def sum_list(arr):\n    if not arr:\n        return 0\n    return arr[0] + sum_list(arr[1:])\n\nprint(sum_list([1, 2, 3, 4]))  # 10"
+        },
+        {
+          "title": "Мемоизация",
+          "content": "Кэширование результатов для ускорения рекурсивных вычислений.",
+          "code": "def fib(n, memo={}):\n    if n <= 1:\n        return n\n    if n not in memo:\n        memo[n] = fib(n-1, memo) + fib(n-2, memo)\n    return memo[n]\n\nprint(fib(50))  # 12586269025 (мгновенно)"
+        },
+        {
+          "title": "Обход дерева (DFS)",
+          "content": "Рекурсивный обход бинарного дерева: прямой, центральный, обратный.",
+          "code": "class Node:\n    def __init__(self, val):\n        self.val = val\n        self.left = None\n        self.right = None\n\ndef inorder(root):\n    if root:\n        inorder(root.left)\n        print(root.val)\n        inorder(root.right)\n\ndef preorder(root):\n    if root:\n        print(root.val)\n        preorder(root.left)\n        preorder(root.right)\n\ndef postorder(root):\n    if root:\n        postorder(root.left)\n        postorder(root.right)\n        print(root.val)"
+        },
+        {
+          "title": "Рекурсия против итерации",
+          "content": "Рекурсия — понятна, но может вызвать переполнение стека. Итерация — быстрее и безопаснее.",
+          "code": "# Рекурсивный факториал\ndef fact_rec(n):\n    return 1 if n <= 1 else n * fact_rec(n-1)\n\n# Итеративный факториал\ndef fact_iter(n):\n    result = 1\n    for i in range(2, n+1):\n        result *= i\n    return result\n\nprint(fact_rec(5), fact_iter(5))  # 120 120"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_stacks_queues",
+      "title": "Стек и очередь",
+      "description": "LIFO, FIFO, deque, практическое применение",
+      "category": "algorithms",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Стек (LIFO)",
+          "content": "Последним пришёл — первым ушёл. Используется в рекурсии, обратной польской записи.",
+          "code": "stack = []\nstack.append(1)\nstack.append(2)\nstack.append(3)\nprint(stack.pop())  # 3\nprint(stack.pop())  # 2\nprint(stack)        # [1]"
+        },
+        {
+          "title": "Очередь (FIFO)",
+          "content": "Первым пришёл — первым ушёл. Используется в BFS, задачах планирования.",
+          "code": "from collections import deque\nqueue = deque()\nqueue.append(1)\nqueue.append(2)\nqueue.append(3)\nprint(queue.popleft())  # 1\nprint(queue.popleft())  # 2\nprint(queue)            # deque([3])"
+        },
+        {
+          "title": "deque для оптимизации",
+          "content": "deque — двусторонняя очередь. Быстрее списка для операций с обоих концов.",
+          "code": "from collections import deque\nd = deque([1, 2, 3])\nd.appendleft(0)\nd.append(4)\nprint(d)  # deque([0, 1, 2, 3, 4])\nprint(d.pop())    # 4\nprint(d.popleft()) # 0"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_strings",
+      "title": "Алгоритмы на строках",
+      "description": "Поиск подстроки, KMP, префикс-функция",
+      "category": "algorithms",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Поиск подстроки (встроенный)",
+          "content": "find(), index(), in — простые способы поиска.",
+          "code": "s = 'hello world'\nprint(s.find('world'))  # 6\nprint('world' in s)     # True\nprint(s.index('o'))     # 4"
+        },
+        {
+          "title": "Алгоритм Кнута-Морриса-Пратта (KMP)",
+          "content": "Эффективный поиск подстроки O(n+m). Сложный, но быстрый.",
+          "code": "def kmp_search(text, pattern):\n    # Префикс-функция\n    def prefix_function(p):\n        pi = [0] * len(p)\n        j = 0\n        for i in range(1, len(p)):\n            while j > 0 and p[i] != p[j]:\n                j = pi[j-1]\n            if p[i] == p[j]:\n                j += 1\n                pi[i] = j\n        return pi\n    \n    pi = prefix_function(pattern)\n    j = 0\n    for i in range(len(text)):\n        while j > 0 and text[i] != pattern[j]:\n            j = pi[j-1]\n        if text[i] == pattern[j]:\n            j += 1\n            if j == len(pattern):\n                return i - j + 1\n    return -1\n\nprint(kmp_search('hello world', 'world'))  # 6"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_two_pointers",
+      "title": "Два указателя и скользящее окно",
+      "description": "Техники для работы с массивами",
+      "category": "algorithms",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Два указателя",
+          "content": "Используется для поиска пар, проверки палиндромов, слияния.",
+          "code": "# Проверка палиндрома\ns = 'racecar'\nleft, right = 0, len(s)-1\nis_palindrome = True\nwhile left < right:\n    if s[left] != s[right]:\n        is_palindrome = False\n        break\n    left += 1\n    right -= 1\nprint(is_palindrome)  # True"
+        },
+        {
+          "title": "Скользящее окно",
+          "content": "Используется для поиска подмассивов с заданными свойствами.",
+          "code": "# Максимальная сумма подмассива длины k\ndef max_sum_subarray(arr, k):\n    window_sum = sum(arr[:k])\n    max_sum = window_sum\n    for i in range(k, len(arr)):\n        window_sum += arr[i] - arr[i-k]\n        max_sum = max(max_sum, window_sum)\n    return max_sum\n\nprint(max_sum_subarray([1, 4, 2, 10, 23, 3, 1], 3))  # 35"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_dp",
+      "title": "Динамическое программирование",
+      "description": "Основы DP: задача о рюкзаке, лестница, монеты",
+      "category": "algorithms",
+      "difficulty": 4,
+      "theory": [
+        {
+          "title": "Что такое DP",
+          "content": "Разбиение задачи на подзадачи, сохранение результатов для избежания пересчёта.",
+          "code": "# Количество способов подняться по лестнице\n# dp[i] = dp[i-1] + dp[i-2]\ndef climb_stairs(n):\n    if n <= 2:\n        return n\n    dp = [0] * (n+1)\n    dp[1] = 1\n    dp[2] = 2\n    for i in range(3, n+1):\n        dp[i] = dp[i-1] + dp[i-2]\n    return dp[n]\n\nprint(climb_stairs(5))  # 8"
+        },
+        {
+          "title": "Задача о рюкзаке (0/1)",
+          "content": "Выбор предметов с максимальной стоимостью при ограничении веса.",
+          "code": "def knapsack(weights, values, capacity):\n    n = len(weights)\n    dp = [[0] * (capacity+1) for _ in range(n+1)]\n    for i in range(1, n+1):\n        for w in range(1, capacity+1):\n            if weights[i-1] <= w:\n                dp[i][w] = max(dp[i-1][w], dp[i-1][w-weights[i-1]] + values[i-1])\n            else:\n                dp[i][w] = dp[i-1][w]\n    return dp[n][capacity]\n\nweights = [2, 3, 4]\nvalues = [3, 4, 5]\nprint(knapsack(weights, values, 5))  # 7"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_greedy",
+      "title": "Жадные алгоритмы",
+      "description": "Выбор локально оптимальных решений",
+      "category": "algorithms",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Задача о размене монет",
+          "content": "Выбор максимальных монет для получения суммы.",
+          "code": "def coin_change_greedy(coins, amount):\n    coins.sort(reverse=True)\n    count = 0\n    for coin in coins:\n        while amount >= coin:\n            amount -= coin\n            count += 1\n    return count if amount == 0 else -1\n\ncoins = [25, 10, 5, 1]\nprint(coin_change_greedy(coins, 30))  # 2 (25+5)"
+        },
+        {
+          "title": "Задача о выборе активностей",
+          "content": "Выбор максимального количества непересекающихся активностей.",
+          "code": "def activity_selection(start, end):\n    activities = sorted(zip(start, end), key=lambda x: x[1])\n    last_end = 0\n    count = 0\n    for s, e in activities:\n        if s >= last_end:\n            count += 1\n            last_end = e\n    return count\n\nstart = [1, 3, 0, 5, 8, 5]\nend = [2, 4, 6, 7, 9, 9]\nprint(activity_selection(start, end))  # 4"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_graphs",
+      "title": "Графы",
+      "description": "BFS, DFS, матрица смежности, поиск путей",
+      "category": "algorithms",
+      "difficulty": 4,
+      "theory": [
+        {
+          "title": "Обход графа (DFS)",
+          "content": "Поиск в глубину — рекурсивный обход.",
+          "code": "graph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D', 'E'],\n    'C': ['A', 'F'],\n    'D': ['B'],\n    'E': ['B', 'F'],\n    'F': ['C', 'E']\n}\n\ndef dfs(graph, start, visited=None):\n    if visited is None:\n        visited = set()\n    visited.add(start)\n    print(start, end=' ')\n    for neighbor in graph[start]:\n        if neighbor not in visited:\n            dfs(graph, neighbor, visited)\n\ndfs(graph, 'A')  # A B D E F C"
+        },
+        {
+          "title": "Обход графа (BFS)",
+          "content": "Поиск в ширину — итеративный обход с очередью.",
+          "code": "from collections import deque\n\ndef bfs(graph, start):\n    visited = set([start])\n    queue = deque([start])\n    while queue:\n        vertex = queue.popleft()\n        print(vertex, end=' ')\n        for neighbor in graph[vertex]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n\nbfs(graph, 'A')  # A B C D E F"
+        },
+        {
+          "title": "Поиск кратчайшего пути (BFS)",
+          "content": "BFS находит кратчайший путь в невзвешенном графе.",
+          "code": "def shortest_path(graph, start, target):\n    queue = deque([(start, [start])])\n    visited = set([start])\n    while queue:\n        vertex, path = queue.popleft()\n        if vertex == target:\n            return path\n        for neighbor in graph[vertex]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append((neighbor, path + [neighbor]))\n    return None\n\nprint(shortest_path(graph, 'A', 'F'))  # ['A', 'C', 'F']"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_combinatorics",
+      "title": "Комбинаторика",
+      "description": "Перестановки, сочетания, itertools",
+      "category": "algorithms",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Модуль itertools",
+          "content": "permutations, combinations, product — для перебора.",
+          "code": "from itertools import permutations, combinations, product\n\n# Перестановки\nprint(list(permutations([1, 2, 3])))  # 6 вариантов\n\n# Сочетания\nprint(list(combinations([1, 2, 3], 2)))  # (1,2), (1,3), (2,3)\n\n# Декартово произведение\nprint(list(product([1, 2], ['a', 'b'])))  # (1,'a'), (1,'b'), ..."
+        },
+        {
+          "title": "Факториал и число сочетаний",
+          "content": "Математические расчёты для комбинаторики.",
+          "code": "import math\n\nn = 5\nk = 2\n# Число сочетаний\nprint(math.comb(n, k))  # 10\n# Число перестановок\nprint(math.perm(n, k))  # 20"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_big_numbers",
+      "title": "Работа с большими числами",
+      "description": "math, decimal, обработка больших данных",
+      "category": "algorithms",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Модуль math",
+          "content": "factorial, sqrt, gcd, lcm, тригонометрия.",
+          "code": "import math\n\nprint(math.factorial(10))  # 3628800\nprint(math.gcd(12, 18))    # 6\nprint(math.lcm(4, 6))      # 12\nprint(math.isqrt(16))      # 4"
+        },
+        {
+          "title": "Модуль decimal",
+          "content": "Точные вычисления с плавающей точкой.",
+          "code": "from decimal import Decimal, getcontext\n\ngetcontext().prec = 10\nx = Decimal('0.1') + Decimal('0.2')\nprint(x)  # 0.3 (без ошибок округления)"
+        }
+      ]
+    },
+    {
+      "id": "algorithms_statistics",
+      "title": "Статистика",
+      "description": "Среднее, медиана, дисперсия, стандартное отклонение",
+      "category": "algorithms",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Модуль statistics",
+          "content": "mean, median, mode, stdev, variance.",
+          "code": "import statistics\n\ndata = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\nprint(statistics.mean(data))   # 5.5\nprint(statistics.median(data)) # 5.5\nprint(statistics.stdev(data))  # 3.027"
+        },
+        {
+          "title": "Расчёт вручную",
+          "content": "Понимание статистических формул.",
+          "code": "def mean(arr):\n    return sum(arr) / len(arr)\n\ndef median(arr):\n    s = sorted(arr)\n    n = len(s)\n    if n % 2 == 1:\n        return s[n//2]\n    return (s[n//2-1] + s[n//2]) / 2\n\nprint(mean([1, 2, 3, 4, 5]))  # 3.0\nprint(median([1, 2, 3, 4, 5]))  # 3"
+        }
+      ]
+    },
+    {
+      "id": "crypto_xor",
+      "title": "XOR шифрование",
+      "description": "Побитовое исключающее ИЛИ, применение в криптографии",
+      "category": "crypto",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Что такое XOR",
+          "content": "XOR (^) — возвращает 1, если биты различаются. Используется для простого шифрования.",
+          "code": "a = 0b1010 ^ 0b1100  # 0b0110\nprint(bin(a))"
+        },
+        {
+          "title": "XOR шифрование/дешифрование",
+          "content": "Одна и та же операция для шифрования и дешифрования.",
+          "code": "def xor_encrypt(data, key):\n    return bytes([b ^ key for b in data])\n\ntext = b'hello'\nkey = 0x42\nencrypted = xor_encrypt(text, key)\nprint(encrypted.hex())\ndecrypted = xor_encrypt(encrypted, key)\nprint(decrypted.decode())  # hello"
+        },
+        {
+          "title": "Взлом XOR с известным plaintext",
+          "content": "Если известен открытый текст, можно восстановить ключ.",
+          "code": "plaintext = b'hello'\nciphertext = bytes([0x2a, 0x2b, 0x2c, 0x2d, 0x2e])\nkey = plaintext[0] ^ ciphertext[0]\nprint(hex(key))  # 0x42"
+        }
+      ]
+    },
+    {
+      "id": "crypto_base64",
+      "title": "Base64 кодирование",
+      "description": "Кодирование бинарных данных в текст",
+      "category": "crypto",
+      "difficulty": 2,
+      "theory": [
+        {
+          "title": "Что такое Base64",
+          "content": "Преобразует бинарные данные в текст, используя 64 символа (A-Z, a-z, 0-9, +, /).",
+          "code": "import base64\n\nencoded = base64.b64encode(b'hello')\nprint(encoded.decode())  # aGVsbG8=\n\ndecoded = base64.b64decode(encoded)\nprint(decoded.decode())  # hello"
+        },
+        {
+          "title": "Base64 в CTF",
+          "content": "Часто используется для сокрытия данных. Распознаётся по символам '=' в конце.",
+          "code": "import base64\n\n# Часто встречается в CTF\nflag = 'Y3Rme2Jhc2U2NF9pc19mdW59'\nprint(base64.b64decode(flag).decode())  # ctf{base64_is_fun}"
+        }
+      ]
+    },
+    {
+      "id": "crypto_hashing",
+      "title": "Хеширование",
+      "description": "MD5, SHA-1, SHA-256, применение",
+      "category": "crypto",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Основы хеширования",
+          "content": "Хеш-функция преобразует данные в строку фиксированной длины. Однонаправленная.",
+          "code": "import hashlib\n\ns = 'hello'\nprint(hashlib.md5(s.encode()).hexdigest())    # 5d41402abc4b2a76b9719d911017c592\nprint(hashlib.sha256(s.encode()).hexdigest())  # 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
+        },
+        {
+          "title": "Поиск коллизий",
+          "content": "MD5 и SHA-1 уязвимы к коллизиям. SHA-256 считается безопасным.",
+          "code": "import hashlib\n\n# Проверка целостности\nfile_hash = hashlib.sha256(b'file content').hexdigest()\nprint(file_hash)\n\n# Сохранение паролей (с солью)\npassword = 'secret'\nsalt = 'random_salt'\nhash_with_salt = hashlib.sha256((password + salt).encode()).hexdigest()\nprint(hash_with_salt)"
+        }
+      ]
+    },
+    {
+      "id": "crypto_rsa",
+      "title": "RSA (база)",
+      "description": "Асимметричное шифрование, генерация ключей",
+      "category": "crypto",
+      "difficulty": 4,
+      "theory": [
+        {
+          "title": "Генерация ключей RSA",
+          "content": "Открытый и закрытый ключи. Требуется библиотека pycryptodome.",
+          "code": "from Crypto.PublicKey import RSA\n\nkey = RSA.generate(2048)\nprivate_key = key.export_key()\npublic_key = key.publickey().export_key()\nprint(private_key.decode()[:100])  # -----BEGIN RSA PRIVATE KEY-----\nprint(public_key.decode()[:100])   # -----BEGIN PUBLIC KEY-----"
+        },
+        {
+          "title": "Шифрование и дешифрование",
+          "content": "Открытым ключом шифруем, закрытым — расшифровываем.",
+          "code": "from Crypto.PublicKey import RSA\nfrom Crypto.Cipher import PKCS1_OAEP\n\nkey = RSA.generate(2048)\ncipher = PKCS1_OAEP.new(key)\n\n# Шифрование\nmessage = b'secret'\nciphertext = cipher.encrypt(message)\nprint(ciphertext.hex()[:50])\n\n# Дешифрование\ndecrypted = cipher.decrypt(ciphertext)\nprint(decrypted.decode())  # secret"
+        }
+      ]
+    },
+    {
+      "id": "stego_lsb",
+      "title": "Стеганография (LSB)",
+      "description": "Сокрытие данных в младших битах изображения",
+      "category": "crypto",
+      "difficulty": 4,
+      "theory": [
+        {
+          "title": "LSB-стеганография",
+          "content": "Замена младших битов пикселей на биты скрываемого сообщения.",
+          "code": "from PIL import Image\n\ndef hide_data(image_path, data):\n    img = Image.open(image_path)\n    pixels = list(img.getdata())\n    data_bits = ''.join(format(ord(c), '08b') for c in data) + '11111111'\n    new_pixels = []\n    for i, pixel in enumerate(pixels):\n        if i < len(data_bits):\n            r = (pixel[0] & 0xFE) | int(data_bits[i])\n            new_pixels.append((r, pixel[1], pixel[2]))\n        else:\n            new_pixels.append(pixel)\n    img.putdata(new_pixels)\n    img.save('hidden.png')\n\ndef extract_data(image_path):\n    img = Image.open(image_path)\n    pixels = list(img.getdata())\n    bits = ''\n    for i, pixel in enumerate(pixels):\n        bits += str(pixel[0] & 1)\n        if len(bits) % 8 == 0:\n            byte = bits[-8:]\n            if byte == '11111111':\n                break\n    text = ''.join(chr(int(bits[i:i+8], 2)) for i in range(0, len(bits)-8, 8))\n    return text"
+        }
+      ]
+    },
+    {
+      "id": "web_sqli",
+      "title": "SQL инъекции",
+      "description": "Внедрение SQL кода через параметры запроса",
+      "category": "ctf",
+      "difficulty": 4,
+      "theory": [
+        {
+          "title": "Что такое SQLi",
+          "content": "Внедрение SQL кода в запрос через неэкранированные параметры.",
+          "code": "# Уязвимый код\nquery = f\"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'\"\n\n# Атака: username = 'admin' --'\n# Результат: SELECT * FROM users WHERE username = 'admin' --' AND password = 'anything'\n# -- делает всё остальное комментарием"
+        },
+        {
+          "title": "Защита от SQLi",
+          "content": "Использование параметризованных запросов.",
+          "code": "import sqlite3\n\nconn = sqlite3.connect('db.sqlite')\ncursor = conn.cursor()\n\n# Безопасный запрос с параметрами\nusername = 'admin'\npassword = 'password'\ncursor.execute('SELECT * FROM users WHERE username=? AND password=?', (username, password))"
+        }
+      ]
+    },
+    {
+      "id": "web_xss",
+      "title": "XSS (Cross-Site Scripting)",
+      "description": "Внедрение JavaScript кода в страницу",
+      "category": "ctf",
+      "difficulty": 4,
+      "theory": [
+        {
+          "title": "Что такое XSS",
+          "content": "Внедрение вредоносного JavaScript кода в веб-страницу.",
+          "code": "<script>alert('XSS')</script>\n<img src=x onerror=alert('XSS')>\n<a href=\"javascript:alert('XSS')\">Click me</a>"
+        },
+        {
+          "title": "Типы XSS",
+          "content": "Отражённый (Reflected), Хранимый (Stored), DOM-based.",
+          "code": "# Отражённый: в параметре URL\nhttp://site.com/search?q=<script>alert('XSS')</script>\n\n# Хранимый: в комментариях на форуме\n<script>fetch('/cookie_stealer?c='+document.cookie)</script>"
+        },
+        {
+          "title": "Защита от XSS",
+          "content": "Экранирование вывода, CSP, HttpOnly cookies.",
+          "code": "# В Python (Flask)\nfrom flask import escape\nsafe_output = escape(user_input)"
+        }
+      ]
+    },
+    {
+      "id": "python_regex",
+      "title": "Регулярные выражения",
+      "description": "re, поиск, замена, группы",
+      "category": "python",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Основы регулярных выражений",
+          "content": "Поиск по шаблону. re.search, re.findall, re.sub.",
+          "code": "import re\n\ns = 'abc123def456'\nprint(re.findall(r'\\d+', s))  # ['123', '456']\nprint(re.sub(r'\\d+', 'X', s))  # abcXdefX\n\n# Поиск email\nemail = 'user@example.com'\nprint(re.match(r'\\w+@\\w+\\.\\w+', email))"
+        },
+        {
+          "title": "Группы и захват",
+          "content": "Использование () для выделения частей.",
+          "code": "s = 'John 25, Alice 30'\nmatches = re.findall(r'(\\w+) (\\d+)', s)\nprint(matches)  # [('John', '25'), ('Alice', '30')]"
+        }
+      ]
+    },
+    {
+      "id": "python_parsing",
+      "title": "Парсинг данных",
+      "description": "BeautifulSoup, lxml, работа с HTML",
+      "category": "python",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Парсинг HTML с BeautifulSoup",
+          "content": "Извлечение данных из HTML-страниц.",
+          "code": "from bs4 import BeautifulSoup\n\nhtml = '<div class=\"content\"><p>Hello</p><p>World</p></div>'\nsoup = BeautifulSoup(html, 'html.parser')\nprint(soup.find('p').text)  # Hello\n\n# Поиск по классу\nitems = soup.find_all('p')\nfor item in items:\n    print(item.text)"
+        },
+        {
+          "title": "Работа с API (requests)",
+          "content": "Получение данных из REST API.",
+          "code": "import requests\n\nresponse = requests.get('https://api.github.com/users/octocat')\nif response.status_code == 200:\n    data = response.json()\n    print(data['login'])  # octocat"
+        }
+      ]
+    },
+    {
+      "id": "python_threading",
+      "title": "Многопоточность",
+      "description": "threading, asyncio, параллельное выполнение",
+      "category": "python",
+      "difficulty": 4,
+      "theory": [
+        {
+          "title": "Потоки (threading)",
+          "content": "Параллельное выполнение задач. Для I/O-bound операций.",
+          "code": "import threading\nimport time\n\ndef worker(name):\n    print(f'Старт {name}')\n    time.sleep(1)\n    print(f'Финиш {name}')\n\nthreads = []\nfor i in range(3):\n    t = threading.Thread(target=worker, args=(i,))\n    t.start()\n    threads.append(t)\n\nfor t in threads:\n    t.join()\nprint('Все потоки завершены')"
+        },
+        {
+          "title": "Асинхронность (asyncio)",
+          "content": "Асинхронное программирование для I/O-bound задач.",
+          "code": "import asyncio\n\nasync def task(name):\n    print(f'Старт {name}')\n    await asyncio.sleep(1)\n    print(f'Финиш {name}')\n\nasync def main():\n    await asyncio.gather(task(1), task(2), task(3))\n\nasyncio.run(main())"
+        }
+      ]
+    },
+    {
+      "id": "python_sqlite",
+      "title": "Работа с базами данных",
+      "description": "sqlite3, CRUD операции",
+      "category": "python",
+      "difficulty": 3,
+      "theory": [
+        {
+          "title": "Подключение и создание таблицы",
+          "content": "sqlite3 — встроенная БД. Не требует установки.",
+          "code": "import sqlite3\n\nconn = sqlite3.connect('example.db')\ncursor = conn.cursor()\ncursor.execute('''CREATE TABLE IF NOT EXISTS users\n                  (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)''')\nconn.commit()"
+        },
+        {
+          "title": "CRUD операции",
+          "content": "Создание, чтение, обновление, удаление записей.",
+          "code": "import sqlite3\n\nconn = sqlite3.connect('example.db')\ncursor = conn.cursor()\n\n# INSERT\ncursor.execute('INSERT INTO users (name, age) VALUES (?, ?)', ('Alice', 25))\ncursor.execute('INSERT INTO users (name, age) VALUES (?, ?)', ('Bob', 30))\nconn.commit()\n\n# SELECT\ncursor.execute('SELECT * FROM users')\nprint(cursor.fetchall())  # [(1, 'Alice', 25), (2, 'Bob', 30)]\n\n# UPDATE\ncursor.execute('UPDATE users SET age = 26 WHERE name = ?', ('Alice',))\nconn.commit()\n\n# DELETE\ncursor.execute('DELETE FROM users WHERE name = ?', ('Bob',))\nconn.commit()\n\nconn.close()"
+        }
+      ]
+    },
+    {
+      "id": "ml_linear_regression",
+      "title": "Линейная регрессия",
+      "description": "Базовый метод машинного обучения",
+      "category": "ai",
+      "difficulty": 4,
+      "theory": [
+        {
+          "title": "Что такое линейная регрессия",
+          "content": "Предсказание значения по линейной зависимости y = kx + b.",
+          "code": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\n\nx = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)\ny = np.array([2, 4, 6, 8, 10])\n\nmodel = LinearRegression()\nmodel.fit(x, y)\n\nprint(model.coef_[0])  # 2.0\nprint(model.intercept_)  # 0.0"
+        },
+        {
+          "title": "Расчёт вручную",
+          "content": "Понимание математики: метод наименьших квадратов.",
+          "code": "import numpy as np\n\ndef linear_regression(x, y):\n    n = len(x)\n    sum_x = sum(x)\n    sum_y = sum(y)\n    sum_xy = sum(x[i] * y[i] for i in range(n))\n    sum_x2 = sum(x[i] ** 2 for i in range(n))\n    \n    k = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x ** 2)\n    b = (sum_y - k * sum_x) / n\n    return k, b\n\nx = [1, 2, 3, 4, 5]\ny = [2, 4, 6, 8, 10]\nprint(linear_regression(x, y))  # (2.0, 0.0)"
+        }
+      ]
+    },
+    {
+      "id": "ml_neural_networks",
+      "title": "Нейросети (база)",
+      "description": "Основы нейронных сетей, TensorFlow/Keras",
+      "category": "ai",
+      "difficulty": 5,
+      "theory": [
+        {
+          "title": "Что такое нейросеть",
+          "content": "Многослойный перцептрон: входной слой, скрытые слои, выходной слой.",
+          "code": "import tensorflow as tf\nfrom tensorflow import keras\n\n# Простая модель\nmodel = keras.Sequential([\n    keras.layers.Dense(64, activation='relu'),\n    keras.layers.Dense(10, activation='softmax')\n])\n\nmodel.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])"
+        },
+        {
+          "title": "Обучение модели",
+          "content": "Загрузка данных, обучение, оценка.",
+          "code": "import tensorflow as tf\nfrom tensorflow import keras\n\n# Данные\n(x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()\nx_train = x_train.reshape(60000, 784) / 255.0\nx_test = x_test.reshape(10000, 784) / 255.0\n\n# Модель\nmodel = keras.Sequential([\n    keras.layers.Dense(128, activation='relu'),\n    keras.layers.Dense(10, activation='softmax')\n])\n\nmodel.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])\n\n# Обучение\nmodel.fit(x_train, y_train, epochs=5, batch_size=32, validation_split=0.2)\n\n# Оценка\ntest_loss, test_acc = model.evaluate(x_test, y_test)\nprint(f'Точность: {test_acc:.4f}')"
+        }
+      ]
+    }
+  ]
+}

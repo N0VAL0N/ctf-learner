@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <symbol id="icon" viewBox="0 0 24 24">
+      <path d="M12 2v4M12 22v-4M4 12H2M22 12h-2M19.07 4.93l-2.83 2.83M6.34 17.66l2.83-2.83M17.66 6.34l-2.83 2.83M4.93 19.07l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+  </defs>
+</svg>

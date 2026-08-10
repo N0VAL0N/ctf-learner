@@ -1,0 +1,24 @@
+[
+  {
+    "id": "prac_ctf_01",
+    "category": "ctf",
+    "difficulty": 1,
+    "title": "XOR шифрование",
+    "description": "Расшифруйте строку, закодированную XOR с ключом 0x42.",
+    "starter_code": "import base64\n\ndata = base64.b64decode('aGVsbG8=')\nkey = 0x42\nresult = bytes([b ^ key for b in data])\nprint(result.decode())",
+    "expected_output": "hello",
+    "time_limit": 1,
+    "memory_limit": 16
+  },
+  {
+    "id": "prac_ctf_02",
+    "category": "ctf",
+    "difficulty": 2,
+    "title": "Base64 декодирование",
+    "description": "Декодируйте строку 'Y3Rme2Jhc2U2NF9pc19mdW59' из Base64.",
+    "starter_code": "import base64\ns = 'Y3Rme2Jhc2U2NF9pc19mdW59'\n# Ваш код здесь",
+    "expected_output": "ctf{base64_is_fun}",
+    "time_limit": 1,
+    "memory_limit": 16
+  }
+]

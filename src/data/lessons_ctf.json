@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ctf_1",
+    "category": "ctf",
+    "title": "XOR шифрование",
+    "difficulty": 1,
+    "theory_refs": ["crypto_basics"],
+    "examples": [
+      {
+        "title": "Пример XOR шифрования",
+        "code": "data = b'hello'\nkey = 0x42\nencrypted = bytes([b ^ key for b in data])\nprint(encrypted.hex())"
+      }
+    ],
+    "tasks": [
+      {
+        "type": "code_insert",
+        "description": "Вставьте правильный ключ вместо ??? для расшифровки строки 'aGVsbG8=' (base64 → XOR).",
+        "code_snippet": "import base64\n\ndata = base64.b64decode('aGVsbG8=')\nkey = ???\nresult = bytes([b ^ key for b in data])\nprint(result.decode())",
+        "correct_answer": "0x42",
+        "hint": "Ключ — шестнадцатеричное число"
+      },
+      {
+        "type": "full_code",
+        "description": "Напишите функцию, которая принимает строку и ключ, возвращает зашифрованную строку (XOR).",
+        "expected_output": "hello",
+        "time_limit": 1,
+        "memory_limit": 16,
+        "starter_code": "def xor_encrypt(data, key):\n    # Ваш код\n    pass"
+      }
+    ]
+  }
+]

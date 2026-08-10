@@ -1,0 +1,30 @@
+[
+  {
+    "id": "ai_1",
+    "category": "ai",
+    "title": "Линейная регрессия",
+    "difficulty": 2,
+    "theory": [
+      {
+        "title": "Что такое линейная регрессия",
+        "content": "Линейная регрессия — это метод предсказания значений по линейной зависимости. Используется в ML для прогнозирования."
+      }
+    ],
+    "examples": [
+      {
+        "title": "Пример с numpy",
+        "code": "import numpy as np\nx = np.array([1, 2, 3])\ny = np.array([2, 4, 6])\ncoef = np.polyfit(x, y, 1)\nprint(coef)"
+      }
+    ],
+    "tasks": [
+      {
+        "type": "full_code",
+        "description": "Напишите функцию, которая по точкам (x, y) вычисляет коэффициенты линейной регрессии.",
+        "expected_output": "[2. 0.]",
+        "time_limit": 2,
+        "memory_limit": 32,
+        "starter_code": "import numpy as np\n\ndef linear_regression(x, y):\n    # Ваш код\n    return coeffs"
+      }
+    ]
+  }
+]

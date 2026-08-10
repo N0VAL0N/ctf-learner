@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <symbol id="icon" viewBox="0 0 24 24">
+      <path d="M4 6h16v14H4V6z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M8 4v16M16 4v16" stroke="currentColor" stroke-width="2"/>
+      <path d="M4 6h16" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="10" r="1" fill="currentColor"/>
+      <circle cx="12" cy="14" r="1" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>

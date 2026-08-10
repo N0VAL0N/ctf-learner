@@ -1,0 +1,18 @@
+[data-theme="dark"] {
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #2a2a3e;
+  --bg-hover: #2a2a4a;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-color: #2a2a3e;
+  --accent: #8b5cf6;
+  --danger: #ef4444;
+  --success: #22c55e;
+
+  --console-bg: #0d0d1a;
+  --console-text: #c9d1d9;
+  --console-border: #2a2a3e;
+  --console-header-bg: #1a1a2e;
+}

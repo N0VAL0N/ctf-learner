@@ -1,0 +1,13 @@
+[
+  {
+    "id": "prac_ai_01",
+    "category": "ai",
+    "difficulty": 3,
+    "title": "Линейная регрессия",
+    "description": "Вычислите коэффициенты линейной регрессии для точек (1,2), (2,4), (3,6).",
+    "starter_code": "import numpy as np\nx = np.array([1, 2, 3])\ny = np.array([2, 4, 6])\ncoef = np.polyfit(x, y, 1)\nprint(coef)",
+    "expected_output": "[2. 0.]",
+    "time_limit": 2,
+    "memory_limit": 32
+  }
+]

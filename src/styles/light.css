@@ -1,0 +1,19 @@
+[data-theme="light"] {
+  --bg-primary: #f5f0eb;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e8e0d8;
+  --bg-hover: #d5cdc5;
+  --text-primary: #2d2a24;
+  --text-secondary: #5a524a;
+  --text-muted: #8a827a;
+  --border-color: #d5cdc5;
+  --accent: #7c3aed;
+  --danger: #dc2626;
+  --success: #16a34a;
+
+  /* Консоль — бежевая, но чуть темнее фона */
+  --console-bg: #e8e0d8;
+  --console-text: #2d2a24;
+  --console-border: #d5cdc5;
+  --console-header-bg: #ddd5cd;
+}
