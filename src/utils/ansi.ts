@@ -1,6 +1,5 @@
 // Парсинг ANSI-цветов в HTML
 export function parseAnsiToHtml(text: string): string {
-  // Простой парсер для цветов (можно расширить)
   const colorMap: Record<string, string> = {
     '31': 'ansi-red',
     '32': 'ansi-green',
@@ -12,8 +11,7 @@ export function parseAnsiToHtml(text: string): string {
     '1': 'ansi-bold'
   }
 
-  // Ищем последовательности \x1b\[(...)m
-  return text.replace(/\x1b\[(\d+)(?:;\d+)*m/g, (match, code) => {
+  return text.replace(/\x1b\[(\d+)(?:;\d+)*m/g, (_match, code) => {
     const className = colorMap[code] || ''
     return className ? `<span class="${className}">` : '</span>'
   })

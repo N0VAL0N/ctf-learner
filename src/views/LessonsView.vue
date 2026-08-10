@@ -43,7 +43,7 @@ import { useLocale } from '@/composables/useLocale'
 import lessonsCTF from '@/data/lessons_ctf.json'
 import lessonsEGE from '@/data/lessons_ege.json'
 import lessonsAI from '@/data/lessons_ai.json'
-import type { Lesson, LessonCategory } from '@/types/lesson'
+import type { Lesson } from '@/types/lesson'
 import LessonItem from '@/components/LessonItem.vue'
 import SearchBar from '@/components/SearchBar.vue'
 
@@ -51,12 +51,14 @@ const router = useRouter()
 const progress = useProgressStore()
 const { translate } = useLocale()
 
-const categories: LessonCategory[] = ['ctf', 'ege', 'ai']
-const currentCategory = ref<LessonCategory>('ctf')
 const searchQuery = ref('')
 const currentLessonId = ref('')
 
-const lessonsMap: Record<LessonCategory, Lesson[]> = {
+const categories = ['ctf', 'ege', 'ai'] as const
+type Category = typeof categories[number]
+const currentCategory = ref<Category>('ctf')
+
+const lessonsMap: Record<Category, Lesson[]> = {
   ctf: lessonsCTF as Lesson[],
   ege: lessonsEGE as Lesson[],
   ai: lessonsAI as Lesson[]

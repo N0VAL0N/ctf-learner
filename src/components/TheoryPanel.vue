@@ -9,12 +9,11 @@
         </div>
         <button @click="onRun(block.code, idx)" class="btn-run-block">▶ Запустить</button>
         
-        <!-- Консоль с возможностью сворачивания -->
         <div v-if="outputConsole.getOutput(idx)" class="console-wrapper">
           <div class="console-header">
             <span>Вывод</span>
             <div class="console-actions">
-              <button @click="toggleConsole(idx)" class="console-toggle-btn" :title="isConsoleCollapsed(idx) ? 'Развернуть' : 'Свернуть'">
+              <button @click="toggleConsole(idx)" class="console-toggle-btn">
                 {{ isConsoleCollapsed(idx) ? '▼' : '▲' }}
               </button>
               <button @click="outputConsole.clearOutput(idx)" class="console-close">✕</button>
@@ -23,7 +22,6 @@
           <div v-show="!isConsoleCollapsed(idx)" class="console-body">
             <pre>{{ outputConsole.getOutput(idx) }}</pre>
           </div>
-          <!-- Фиолетовая полоска в свёрнутом состоянии -->
           <div v-show="isConsoleCollapsed(idx)" class="console-collapsed-bar" @click="toggleConsole(idx)">
             <span class="console-collapsed-icon">▶</span>
             <span class="console-collapsed-text">Вывод скрыт (нажмите, чтобы развернуть)</span>
@@ -40,12 +38,11 @@
           <div class="code-block"><pre><code>{{ ex.code }}</code></pre></div>
           <button @click="onRun(ex.code, `example_${idx}`)" class="btn-run-block">▶ Запустить</button>
           
-          <!-- Консоль для примеров -->
           <div v-if="outputConsole.getOutput(`example_${idx}`)" class="console-wrapper">
             <div class="console-header">
               <span>Вывод</span>
               <div class="console-actions">
-                <button @click="toggleConsole(`example_${idx}`)" class="console-toggle-btn" :title="isConsoleCollapsed(`example_${idx}`) ? 'Развернуть' : 'Свернуть'">
+                <button @click="toggleConsole(`example_${idx}`)" class="console-toggle-btn">
                   {{ isConsoleCollapsed(`example_${idx}`) ? '▼' : '▲' }}
                 </button>
                 <button @click="outputConsole.clearOutput(`example_${idx}`)" class="console-close">✕</button>
@@ -66,12 +63,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { reactive } from 'vue'
 import type { TheoryBlock, ExampleBlock } from '@/types/lesson'
 import { useConsole } from '@/composables/useConsole'
 import { usePython } from '@/composables/usePython'
 
-const props = defineProps<{
+defineProps<{
   blocks: TheoryBlock[]
   examples?: ExampleBlock[]
 }>()
@@ -79,7 +76,6 @@ const props = defineProps<{
 const outputConsole = useConsole()
 const { runPython } = usePython()
 
-// Состояние свёрнутости консолей
 const collapsedConsoles = reactive<Record<string | number, boolean>>({})
 
 const isConsoleCollapsed = (key: string | number) => {
@@ -94,7 +90,6 @@ const onRun = async (code: string, key: string | number) => {
   try {
     const result = await runPython(code)
     outputConsole.setOutput(key, result)
-    // При новом выводе разворачиваем консоль
     collapsedConsoles[key] = false
   } catch (e) {
     outputConsole.setOutput(key, `❌ Error: ${e}`)
